@@ -8,6 +8,11 @@ class Clisso < Formula
   depends_on "go" => :build
   depends_on "dep" => :build
 
+  bottle do
+    root_url 'https://github.com/allcloud-jonathan/clisso/releases/download/' + version
+    sha256 "e873ecc13c57da29b1edd793c4283ad675a20b8b28e5ff9cab1c853dd38eebde" => :high_sierra
+  end
+
   def install
     ENV["GOPATH"] = buildpath
     ENV.prepend_create_path "PATH", buildpath/"bin"
