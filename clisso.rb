@@ -6,6 +6,7 @@ class Clisso < Formula
 
   bottle do
     root_url 'https://github.com/allcloud-io/clisso/releases/download/0.5.0'
+    sha256 "f7d44a9b6781436c2a1ed9a23d34bb0d36f460753a54425a118cfe0e3c78ce28" => :high_sierra
   end
 
   depends_on "make" => :build
