@@ -7,7 +7,7 @@ class Clisso < Formula
   bottle do
     root_url 'https://github.com/allcloud-io/clisso/releases/download/%VERSION%'
     cellar :any_skip_relocation
-    %BOTTLES%
+%BOTTLE%
   end
 
   depends_on "make" => :build
