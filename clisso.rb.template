@@ -5,14 +5,14 @@ class Clisso < Formula
   sha256 "%SOURCE_SHA%"
 
   bottle do
-    root_url 'https://github.com/allcloud-io/clisso/releases/download/%VERSION%'
+    root_url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%"
     cellar :any_skip_relocation
 %BOTTLE%
   end
 
-  depends_on "make" => :build
-  depends_on "go" => :build
   depends_on "dep" => :build
+  depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
     ENV["GOPATH"] = buildpath
@@ -20,7 +20,6 @@ class Clisso < Formula
     dir = buildpath/"src/github.com/allcloud-io/clisso"
     dir.install buildpath.children - [buildpath/".brew_home"]
     cd dir do
-
       system "dep", "ensure", "-vendor-only"
       ENV["VERSION"] = version
       system "make", "-e"
