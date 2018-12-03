@@ -1,17 +1,18 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.5.0.tar.gz"
-  sha256 "da819973003a6fa21bf2605a6a0113aaa58080d42b78b2f276910fcdbb5b1511"
+  url "https://github.com/allcloud-io/clisso/archive/0.6.0.tar.gz"
+  sha256 "438ebf6c75ebe46333c20b6b0aa46baa86a351f9a52999b689eed36dbc368fc3"
 
   bottle do
-    root_url 'https://github.com/allcloud-io/clisso/releases/download/0.5.0'
-    sha256 "f7d44a9b6781436c2a1ed9a23d34bb0d36f460753a54425a118cfe0e3c78ce28" => :high_sierra
+    root_url "https://github.com/allcloud-io/clisso/releases/download/0.6.0"
+    cellar :any_skip_relocation
+    sha256 "132cfbc15a8f98c6ccf24f8f2e20edd0006045f9eff3bee57c25343aa1da5e1b" => :mojave
   end
 
-  depends_on "make" => :build
-  depends_on "go" => :build
   depends_on "dep" => :build
+  depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
     ENV["GOPATH"] = buildpath
@@ -19,7 +20,6 @@ class Clisso < Formula
     dir = buildpath/"src/github.com/allcloud-io/clisso"
     dir.install buildpath.children - [buildpath/".brew_home"]
     cd dir do
-
       system "dep", "ensure", "-vendor-only"
       ENV["VERSION"] = version
       system "make", "-e"
