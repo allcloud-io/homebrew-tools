@@ -10,8 +10,8 @@ class Clisso < Formula
 %BOTTLE%
   end
 
-  depends_on "go" => :build
   depends_on "dep" => :build
+  depends_on "go" => :build
   depends_on "make" => :build
 
   def install
