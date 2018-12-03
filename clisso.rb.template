@@ -5,7 +5,7 @@ class Clisso < Formula
   sha256 "%SOURCE_SHA%"
 
   bottle do
-    root_url 'https://github.com/allcloud-io/clisso/releases/download/%VERSION%'
+    root_url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%"
     cellar :any_skip_relocation
 %BOTTLE%
   end
