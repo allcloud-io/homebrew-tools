@@ -10,7 +10,6 @@ class Clisso < Formula
 %BOTTLE%
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
@@ -20,7 +19,6 @@ class Clisso < Formula
     dir = buildpath/"src/github.com/allcloud-io/clisso"
     dir.install buildpath.children - [buildpath/".brew_home"]
     cd dir do
-      system "dep", "ensure", "-vendor-only"
       ENV["VERSION"] = version
       system "make", "-e"
       bin.install "clisso" => "clisso"
