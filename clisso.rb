@@ -1,16 +1,15 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.7.0.tar.gz"
-  sha256 "6f2ba6d9e6247cdd71c6833b3b9c8e0947b7de1744cfbef6efeb69a26b4f7555"
+  url "https://github.com/allcloud-io/clisso/archive/0.8.0.tar.gz"
+  sha256 "5dbbfef92fa08efec2281400a2a9f13cbc942a7e722f4503b52f095ccba013d0"
 
   bottle do
-    root_url "https://github.com/allcloud-io/clisso/releases/download/0.7.0"
+    root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.0"
     cellar :any_skip_relocation
-    sha256 "5e896f09960815a15e077dac25c158f0a0c412bcf6e99e752913ee97511fcc31" => :mojave
+    sha256 "05b78b4b88e61d1ceb81455c2b9e7c7413453d7e41d456f74a03bee746d1cfad" => :big_sur
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
@@ -20,7 +19,6 @@ class Clisso < Formula
     dir = buildpath/"src/github.com/allcloud-io/clisso"
     dir.install buildpath.children - [buildpath/".brew_home"]
     cd dir do
-      system "dep", "ensure", "-vendor-only"
       ENV["VERSION"] = version
       system "make", "-e"
       bin.install "clisso" => "clisso"
