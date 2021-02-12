@@ -7,6 +7,7 @@ class Clisso < Formula
   bottle do
     root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.1"
     cellar :any_skip_relocation
+    sha256 "68c4415afcf4b0b3e988ec4f9b9300aff0cf71425ce6e2308ebc7311ddc18c9b" => :big_sur
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Clisso < Formula
     cd dir do
       ENV["VERSION"] = version
       system "make", "-e"
-      bin.install "clisso" => "clisso"
+      bin.install "build/clisso" => "clisso"
     end
   end
 
