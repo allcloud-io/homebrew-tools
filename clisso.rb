@@ -1,13 +1,12 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.8.0.tar.gz"
-  sha256 "5dbbfef92fa08efec2281400a2a9f13cbc942a7e722f4503b52f095ccba013d0"
+  url "https://github.com/allcloud-io/clisso/archive/0.8.1.tar.gz"
+  sha256 "9ce700435ea8f25fee98f879abc68113c608f618b4f317bd340ffd763d816df2"
 
   bottle do
-    root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.0"
+    root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.1"
     cellar :any_skip_relocation
-    sha256 "05b78b4b88e61d1ceb81455c2b9e7c7413453d7e41d456f74a03bee746d1cfad" => :big_sur
   end
 
   depends_on "go" => :build

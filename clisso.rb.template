@@ -21,7 +21,7 @@ class Clisso < Formula
     cd dir do
       ENV["VERSION"] = version
       system "make", "-e"
-      bin.install "clisso" => "clisso"
+      bin.install "build/clisso" => "clisso"
     end
   end
 
