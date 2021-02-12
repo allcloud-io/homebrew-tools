@@ -7,6 +7,7 @@ class Clisso < Formula
   bottle do
     root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.1"
     cellar :any_skip_relocation
+    sha256 "e56aded2aef09399127f4789c9abef98d59a5c1cab1f0ce623ab7e8b93e9a18e" => :catalina
     sha256 "68c4415afcf4b0b3e988ec4f9b9300aff0cf71425ce6e2308ebc7311ddc18c9b" => :big_sur
   end
 
