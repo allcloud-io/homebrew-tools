@@ -24,7 +24,7 @@ class Clisso < Formula
       ENV["AC_USERNAME"] = "%AC_USERNAME%"
       system "make", "-e", "%BUILD_TARGET%"
       system "unzip assets/clisso-darwin-amd64.zip"
-      bin.install "assets/clisso-darwin-amd64" => "clisso"
+      bin.install "clisso-darwin-amd64" => "clisso"
     end
   end
 
