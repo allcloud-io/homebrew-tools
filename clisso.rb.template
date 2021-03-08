@@ -11,6 +11,7 @@ class Clisso < Formula
   end
 
   depends_on "go" => :build
+  depends_on "mitchellh/gon/gon" => :build
   depends_on "make" => :build
 
   def install
@@ -20,8 +21,10 @@ class Clisso < Formula
     dir.install buildpath.children - [buildpath/".brew_home"]
     cd dir do
       ENV["VERSION"] = version
-      system "make", "-e"
-      bin.install "build/clisso" => "clisso"
+      ENV["AC_USERNAME"] = "%AC_USERNAME%"
+      system "make", "-e", "%BUILD_TARGET%"
+      system "unzip assets/clisso-darwin-amd64.zip"
+      bin.install "assets/clisso-darwin-amd64" => "clisso"
     end
   end
 
