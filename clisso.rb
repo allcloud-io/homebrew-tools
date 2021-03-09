@@ -8,6 +8,8 @@ class Clisso < Formula
     root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.3"
     cellar :any_skip_relocation
     sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :big_sur
+    sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :catalina
+    sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :high_sierra
   end
 
   depends_on "go" => :build
