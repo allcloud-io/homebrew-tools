@@ -1,3 +1,6 @@
+# typed: false
+# frozen_string_literal: true
+
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
@@ -6,7 +9,6 @@ class Clisso < Formula
 
   bottle do
     root_url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%"
-    cellar :any_skip_relocation
 %BOTTLE%
   end
 
@@ -23,7 +25,7 @@ class Clisso < Formula
       ENV["VERSION"] = version
       ENV["AC_USERNAME"] = "%AC_USERNAME%"
       system "make", "-e", "%BUILD_TARGET%"
-      system "unzip assets/clisso-darwin-amd64.zip"
+      system "unzip", "assets/clisso-darwin-amd64.zip"
       bin.install "clisso-darwin-amd64" => "clisso"
     end
   end

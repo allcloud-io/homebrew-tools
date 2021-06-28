@@ -1,3 +1,6 @@
+# typed: false
+# frozen_string_literal: true
+
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
@@ -6,10 +9,9 @@ class Clisso < Formula
 
   bottle do
     root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.3"
-    cellar :any_skip_relocation
-    sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :big_sur
-    sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :catalina
-    sha256 "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070" => :high_sierra
+    sha256 cellar: :any_skip_relocation, big_sur:     "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
+    sha256 cellar: :any_skip_relocation, catalina:    "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
+    sha256 cellar: :any_skip_relocation, high_sierra: "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
   end
 
   depends_on "go" => :build
@@ -23,7 +25,7 @@ class Clisso < Formula
     cd dir do
       ENV["VERSION"] = version
       system "make", "-e", "unsigned-darwin-amd64-zip"
-      system "unzip assets/clisso-darwin-amd64.zip"
+      system "unzip", "assets/clisso-darwin-amd64.zip"
       bin.install "clisso-darwin-amd64" => "clisso"
     end
   end
