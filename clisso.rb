@@ -4,28 +4,19 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.8.3.tar.gz"
-  sha256 "32a425eed2e98c6586230864ffe15086fae7c4bbdb20d7f8ae6cebd692951fe8"
+  url "https://github.com/allcloud-io/clisso/archive/0.9.0.tar.gz"
+  sha256 "63bf75325b24873053953fb43c7514f323970c23fac1415307cd26ef27a321ff"
+  version "0.9.0"
 
-  bottle do
-    root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.3"
-    sha256 cellar: :any_skip_relocation, big_sur:     "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
-    sha256 cellar: :any_skip_relocation, catalina:    "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
-    sha256 cellar: :any_skip_relocation, high_sierra: "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
+  bottle :unneeded
+
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/allcloud-io/clisso/releases/download/0.9.0/clisso-darwin-amd64.zip"
+    sha256 "63bf75325b24873053953fb43c7514f323970c23fac1415307cd26ef27a321ff"
   end
 
-  depends_on "go" => :build
-  depends_on "make" => :build
-
   def install
-    ENV["GOPATH"] = buildpath
-    ENV.prepend_create_path "PATH", buildpath/"bin"
-    dir = buildpath/"src/github.com/allcloud-io/clisso"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-    cd dir do
-      ENV["VERSION"] = version
-      system "make", "-e", "unsigned-darwin-amd64-zip"
-      system "unzip", "assets/clisso-darwin-amd64.zip"
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "clisso-darwin-amd64" => "clisso"
     end
   end
