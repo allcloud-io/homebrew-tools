@@ -12,7 +12,7 @@ class Clisso < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%/clisso-darwin-amd64.zip"
-    sha256 "%BULD_SHA%"
+    sha256 "%BUILD_DARWIN_SHA%"
   end
 
   def install
