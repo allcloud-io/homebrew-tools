@@ -8,7 +8,7 @@ class Clisso < Formula
   sha256 "%SOURCE_SHA%"
 
   bottle do
-    root_url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%"
+    url "https://github.com/allcloud-io/clisso/releases/download/clisso-%VERSION%.bottle.tar.gz"
 %BOTTLE%
   end
 
