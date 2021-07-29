@@ -6,26 +6,17 @@ class Clisso < Formula
   homepage "https://github.com/allcloud-io/clisso"
   url "https://github.com/allcloud-io/clisso/archive/%VERSION%.tar.gz"
   sha256 "%SOURCE_SHA%"
+  version "%VERSION%"
 
-  bottle do
-    url "https://github.com/allcloud-io/clisso/releases/download/clisso-%VERSION%.bottle.tar.gz"
-%BOTTLE%
+  bottle :unneeded
+
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%/clisso-darwin-amd64.zip"
+    sha256 "%BULD_SHA%"
   end
 
-  depends_on "go" => :build
-  depends_on "mitchellh/gon/gon" => :build
-  depends_on "make" => :build
-
   def install
-    ENV["GOPATH"] = buildpath
-    ENV.prepend_create_path "PATH", buildpath/"bin"
-    dir = buildpath/"src/github.com/allcloud-io/clisso"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-    cd dir do
-      ENV["VERSION"] = version
-      ENV["AC_USERNAME"] = "%AC_USERNAME%"
-      system "make", "-e", "%BUILD_TARGET%"
-      system "unzip", "assets/clisso-darwin-amd64.zip"
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "clisso-darwin-amd64" => "clisso"
     end
   end
