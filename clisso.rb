@@ -4,29 +4,36 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.8.3.tar.gz"
-  sha256 "32a425eed2e98c6586230864ffe15086fae7c4bbdb20d7f8ae6cebd692951fe8"
+  url "https://github.com/allcloud-io/clisso/archive/0.9.0.tar.gz"
+  sha256 "438bf6adccd26a305bef8205c3b18e1375bfa9a25893a221412adb8e9f339890"
+  version "0.9.0"
 
-  bottle do
-    root_url "https://github.com/allcloud-io/clisso/releases/download/0.8.3"
-    sha256 cellar: :any_skip_relocation, big_sur:     "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
-    sha256 cellar: :any_skip_relocation, catalina:    "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
-    sha256 cellar: :any_skip_relocation, high_sierra: "9b08734bb31d0cb5533724fcfb89ee13952a7dc93639be7c039cc79c94e04070"
+  bottle :unneeded
+
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/allcloud-io/clisso/releases/download/0.9.0/clisso-darwin-amd64.zip"
+    sha256 "8b88748e84a17949e48bfbb3d0f919f0e9c1a7b64a22012c785d0b101a136f2e"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/allcloud-io/clisso/releases/download/0.9.0/clisso-darwin-arm64.zip"
+    sha256 "0d3eb0f706296995da8b9c0a82506e4af39c3026f0975a7af4f7823cfbb8a797"
   end
 
-  depends_on "go" => :build
-  depends_on "make" => :build
-
   def install
-    ENV["GOPATH"] = buildpath
-    ENV.prepend_create_path "PATH", buildpath/"bin"
-    dir = buildpath/"src/github.com/allcloud-io/clisso"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-    cd dir do
-      ENV["VERSION"] = version
-      system "make", "-e", "unsigned-darwin-amd64-zip"
-      system "unzip", "assets/clisso-darwin-amd64.zip"
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "clisso-darwin-amd64" => "clisso"
+    elsif OS.mac? && Hardware::CPU.arm?
+      bin.install "clisso-darwin-arm64" => "clisso"
+    else
+      ENV["GOPATH"] = buildpath
+      ENV.prepend_create_path "PATH", buildpath/"bin"
+      dir = buildpath/"src/github.com/allcloud-io/clisso"
+      dir.install buildpath.children - [buildpath/".brew_home"]
+      cd dir do
+        ENV["VERSION"] = version
+        system "make", "-e", "native"
+        bin.install "build/clisso" => "clisso"
+      end
     end
   end
 

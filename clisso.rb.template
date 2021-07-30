@@ -12,12 +12,28 @@ class Clisso < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%/clisso-darwin-amd64.zip"
-    sha256 "%BUILD_DARWIN_SHA%"
+    sha256 "%BUILD_DARWIN_AMD64_SHA%"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%/clisso-darwin-arm64.zip"
+    sha256 "%BUILD_DARWIN_ARM64_SHA%"
   end
 
   def install
     if OS.mac? && Hardware::CPU.intel?
       bin.install "clisso-darwin-amd64" => "clisso"
+    elsif OS.mac? && Hardware::CPU.arm?
+      bin.install "clisso-darwin-arm64" => "clisso"
+    else
+      ENV["GOPATH"] = buildpath
+      ENV.prepend_create_path "PATH", buildpath/"bin"
+      dir = buildpath/"src/github.com/allcloud-io/clisso"
+      dir.install buildpath.children - [buildpath/".brew_home"]
+      cd dir do
+        ENV["VERSION"] = version
+        system "make", "-e", "native"
+        bin.install "build/clisso" => "clisso"
+      end
     end
   end
 
