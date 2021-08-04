@@ -4,19 +4,19 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command-line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/0.9.1.tar.gz"
-  sha256 "3bf4fb53a591e1654b04a6bf1f3d5162b799dd14553ecd1531e29f982eeaf129"
-  version "0.9.1"
+  url "https://github.com/allcloud-io/clisso/archive/0.9.2.tar.gz"
+  sha256 "880de2be69bd7f37fb1cc9b17e23636a493d1ce29fb1e27cb9e9c1cfd949fcd9"
+  version "0.9.2"
 
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/allcloud-io/clisso/releases/download/0.9.1/clisso-darwin-amd64.zip"
-    sha256 "5e4789005784b18b79db6769469ea698d2ae35d87cb3a8d45a6863e481f2409a"
+    url "https://github.com/allcloud-io/clisso/releases/download/0.9.2/clisso-darwin-amd64.zip"
+    sha256 "7ce756b71c353ac7805a2a050899259188b404aa491dbd6b0b3565fffa1b8cc1"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/allcloud-io/clisso/releases/download/0.9.1/clisso-darwin-arm64.zip"
-    sha256 "e783b5e25a3c8193cb07929fad38074ee5c93911f3cee6a65a78f73d3dd9fa4a"
+    url "https://github.com/allcloud-io/clisso/releases/download/0.9.2/clisso-darwin-arm64.zip"
+    sha256 "997e1c9da894ef8582af03d0c76092403f954c5b2d69edacf8174c599b72f7e6"
   end
 
   def install
