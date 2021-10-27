@@ -8,8 +8,6 @@ class Clisso < Formula
   sha256 "880de2be69bd7f37fb1cc9b17e23636a493d1ce29fb1e27cb9e9c1cfd949fcd9"
   version "0.9.2"
 
-  bottle :unneeded
-
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/allcloud-io/clisso/releases/download/0.9.2/clisso-darwin-amd64.zip"
     sha256 "7ce756b71c353ac7805a2a050899259188b404aa491dbd6b0b3565fffa1b8cc1"
