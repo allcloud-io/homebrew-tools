@@ -8,8 +8,6 @@ class Clisso < Formula
   sha256 "%SOURCE_SHA%"
   version "%VERSION%"
 
-  bottle :unneeded
-
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/allcloud-io/clisso/releases/download/%VERSION%/clisso-darwin-amd64.zip"
     sha256 "%BUILD_DARWIN_AMD64_SHA%"
