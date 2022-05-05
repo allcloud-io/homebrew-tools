@@ -5,20 +5,20 @@
 class Clisso < Formula
   desc ""
   homepage ""
-  version "0.10.2"
+  version "0.10.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.10.2/clisso_darwin_arm64.zip"
-      sha256 "e1a3fed1fddcb08e118ab65b979a925e847fc9bac152890b32d158220bb628a5"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.10.3/clisso_darwin_arm64.zip"
+      sha256 "4f1bad9ecaf4fa42a64dd0003b771b57bcd0292a0441f53b6d19df2b269f8640"
 
       def install
         bin.install "clisso"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.10.2/clisso_darwin_amd64.zip"
-      sha256 "840403df1183cf3f2c68df7caddee40cec6cbab705c40c0fbbacf4cf1bfcc159"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.10.3/clisso_darwin_amd64.zip"
+      sha256 "f6af92984db1746091ec74af563c4a3715962aed92d1e39618107130137104d6"
 
       def install
         bin.install "clisso"
@@ -28,16 +28,16 @@ class Clisso < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.10.2/clisso_linux_arm64.zip"
-      sha256 "e425f473abb94209374f8bea64047ef49d09525e0a28e8d643ae3d4af110694f"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.10.3/clisso_linux_arm64.zip"
+      sha256 "785b30b76959c6aa2b3cf0c8c28451281a82625a6f0a3aa806f0d64db7559cd4"
 
       def install
         bin.install "clisso"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.10.2/clisso_linux_amd64.zip"
-      sha256 "8da31781fb8ed7b4a90e80fb5fe3d0a1062d5bfddcda70a0bc65bf8e3ff660c5"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.10.3/clisso_linux_amd64.zip"
+      sha256 "a5defeb760b64f3ab74ee34b43c169a2f6ce6770e5d1c29d35031bb623f7f5ae"
 
       def install
         bin.install "clisso"
