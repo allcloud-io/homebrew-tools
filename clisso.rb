@@ -5,20 +5,20 @@
 class Clisso < Formula
   desc ""
   homepage ""
-  version "0.13.0-pre1"
+  version "0.13.0-pre2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre1/clisso_darwin_arm64.zip"
-      sha256 "8498f721f65c574998efd98210fb668b60de1a989c87c8d152838033ba37fad6"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre2/clisso_darwin_arm64.zip"
+      sha256 "544228fe0bc072322c52453101e71fd2c8a0aba44f66a663a416570ecdb79d37"
 
       def install
         bin.install "clisso"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre1/clisso_darwin_amd64.zip"
-      sha256 "2ed179de0aff1fd1849f0176675586e0b5c2024fa6e84de0f25e3e69f7266f6c"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre2/clisso_darwin_amd64.zip"
+      sha256 "5e9523ce816c8c4b7bca7c5e157b6399c94b1983edd0c99fc705ec6dea9e3b57"
 
       def install
         bin.install "clisso"
@@ -28,16 +28,16 @@ class Clisso < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre1/clisso_linux_arm64.zip"
-      sha256 "052a995690d233302ac8a80ddafe419567ec3c432685f9162453d1c659107e25"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre2/clisso_linux_arm64.zip"
+      sha256 "4715c1b92e0d7ccd8c40764cf05826c1fab46874da1147392c2e73375ded79f5"
 
       def install
         bin.install "clisso"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre1/clisso_linux_amd64.zip"
-      sha256 "b5bceca262be2d66a5ea217305408730b48e43789dd40f9782be2955769726a5"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.13.0-pre2/clisso_linux_amd64.zip"
+      sha256 "6b443d739e3760eb32c0a1033a2a5d6ce72003f85f28cdeb69c8c84ae9be6cea"
 
       def install
         bin.install "clisso"
