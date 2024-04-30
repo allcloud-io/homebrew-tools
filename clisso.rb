@@ -5,20 +5,20 @@
 class Clisso < Formula
   desc ""
   homepage ""
-  version "0.15.0"
+  version "0.16.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.15.0/clisso_darwin_arm64.zip"
-      sha256 "07c77401b01c44dfe40d587f0eecba349d9659bfefd270001fb6e3b11097ad42"
+    if Hardware::CPU.intel?
+      url "https://github.com/allcloud-io/clisso/releases/download/0.16.0/clisso_darwin_amd64.zip"
+      sha256 "643e7549e308bbf4b83bdc36923d28b7281f37e4c3ae315aef2ae5828f979c97"
 
       def install
         bin.install "clisso"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.15.0/clisso_darwin_amd64.zip"
-      sha256 "43aa937a3d1879cc1602991df15095576a94ca18db81fc0286e97d5cf342c875"
+    if Hardware::CPU.arm?
+      url "https://github.com/allcloud-io/clisso/releases/download/0.16.0/clisso_darwin_arm64.zip"
+      sha256 "1d733db1aa7275be0cf39303dfde31036e5a3862b10877141c975d4345c73656"
 
       def install
         bin.install "clisso"
@@ -27,17 +27,17 @@ class Clisso < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.15.0/clisso_linux_arm64.zip"
-      sha256 "79e5710991785521cac04e796949b9ce5c5cf23f19b3017434ed904ea204d841"
+    if Hardware::CPU.intel?
+      url "https://github.com/allcloud-io/clisso/releases/download/0.16.0/clisso_linux_amd64.zip"
+      sha256 "b0e92c8b62de7df7d2d44a752afccd9c11b66d8940b19e563bc7734e4c0c2d20"
 
       def install
         bin.install "clisso"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/allcloud-io/clisso/releases/download/0.15.0/clisso_linux_amd64.zip"
-      sha256 "41bd77e0c75c0e90b6d440314be060bc3cd2a241c494589d5f5e4f550bd91037"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/allcloud-io/clisso/releases/download/0.16.0/clisso_linux_arm64.zip"
+      sha256 "5b8752b18ace1f21c4a5566a3bb6e95d1d96c54bc5d0edab7d626d8791bb744d"
 
       def install
         bin.install "clisso"
