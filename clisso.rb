@@ -8,6 +8,7 @@ class Clisso < Formula
   url "https://github.com/allcloud-io/clisso/archive/refs/tags/0.17.0.tar.gz"
   sha256 "75013c2b27e535e4006ebce85513ab74e81f21c888e06a6d67dbc3f1c761e15c"
   license "MPL-2.0"
+  version "0.17.0"
 
   on_macos do
     on_intel do
