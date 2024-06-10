@@ -5,32 +5,32 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/refs/tags/0.18.0.tar.gz"
-  version "0.18.0"
-  sha256 "6d430abaa2b109b65edbdeefbcbdf452631f1606a268accb878420b59cd0236e"
+  url "https://github.com/allcloud-io/clisso/archive/refs/tags/0.18.1.tar.gz"
+  version "0.18.1"
+  sha256 "7ef09711ab869367bc020ca7fb200c15010fd99a9892ecb4d8bfcd981a3cb544"
   license "MPL-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.18.0/clisso-0.18.0-darwin-amd64.tar.gz"
-      sha256 "84ebcf563385a1199f11c709e56dddd17614cb166accb70f82cbe9a265e12985"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.18.1/clisso-0.18.1-darwin-amd64.tar.gz"
+      sha256 "98abc67ddf11a607f2dcb854306890eaaf031efee67ac57b5209948be70e36a0"
     end
 
     on_arm do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.18.0/clisso-0.18.0-darwin-arm64.tar.gz"
-      sha256 "03bff38d015f2dee4880106fb57389019391bf47857c36d087b2323c50924ef8"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.18.1/clisso-0.18.1-darwin-arm64.tar.gz"
+      sha256 "ab878fb4d4799a9df1310a003ad7ebba28260a580cad5978a30b0e6e29fdbc95"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.18.0/clisso-0.18.0-linux-amd64.tar.gz"
-      sha256 "8366f44236b94285ed0baed49fe2ad71717bf2ffca9a3fe1590e172c7845e8ea"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.18.1/clisso-0.18.1-linux-amd64.tar.gz"
+      sha256 "0ead9b8f4ee5682535938863b5595dc7f050b584e2c7f1026c982a455de4c838"
     end
 
     on_arm do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.18.0/clisso-0.18.0-linux-arm64.tar.gz"
-      sha256 "a3d0dd0844e64a7ed129a7fdab19304be83d6aebe592e9d74b1983a61925c27f"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.18.1/clisso-0.18.1-linux-arm64.tar.gz"
+      sha256 "d13c90f11d3cad297d334eb2e78f04bf08d35f5babad53649e74921ef1ef417d"
     end
   end
 
