@@ -5,32 +5,32 @@
 class Clisso < Formula
   desc "Get temporary credentials for cloud providers from the command line"
   homepage "https://github.com/allcloud-io/clisso"
-  url "https://github.com/allcloud-io/clisso/archive/refs/tags/0.19.2.tar.gz"
-  version "0.19.2"
-  sha256 "151b837a2476b5df27d636a1c7fe931c18bc2e4d09f82be1306db4519cb912ca"
+  url "https://github.com/allcloud-io/clisso/archive/refs/tags/0.19.3.tar.gz"
+  version "0.19.3"
+  sha256 "235455800a2acda7dd954aee57b72768572c9196f14d474684fcb977280d3c10"
   license "MPL-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.19.2/clisso-0.19.2-darwin-amd64.tar.gz"
-      sha256 "410b8e594978725d3dd0f10b0da63bb62f777ce701cba35ca48851a36f400415"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.19.3/clisso-0.19.3-darwin-amd64.tar.gz"
+      sha256 "947c324a7f5156f816c2d358a18709a59cfbca432f0248c6734d2b26f98f3510"
     end
 
     on_arm do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.19.2/clisso-0.19.2-darwin-arm64.tar.gz"
-      sha256 "6df496787796a96cfac48e26ab3c70c2241b9fccdbb33e299c1c9f3548c15983"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.19.3/clisso-0.19.3-darwin-arm64.tar.gz"
+      sha256 "7e8cde6096345f2adbc33a061c9805e929fad2771372f9285e2d1f746406c4dc"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.19.2/clisso-0.19.2-linux-amd64.tar.gz"
-      sha256 "ac50027adad2005a8671c45e8356d8a432c0039a00b532d1be6d62aca4d6f4d7"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.19.3/clisso-0.19.3-linux-amd64.tar.gz"
+      sha256 "c118015580c96e6221d89b91dc9f6bd4389ccbefaa88816cb6b97d9a06a012f7"
     end
 
     on_arm do
-      url "https://github.com/allcloud-io/clisso/releases/download/0.19.2/clisso-0.19.2-linux-arm64.tar.gz"
-      sha256 "2fc6596d8d7ce90ddb1b02dd9b1b2c94cfeb2818de03addecb1e61e646b9603a"
+      url "https://github.com/allcloud-io/clisso/releases/download/0.19.3/clisso-0.19.3-linux-arm64.tar.gz"
+      sha256 "3634c9271ad5f784c41524acd1319651a537bc8378fa8726a27e5b8d23062b60"
     end
   end
 
